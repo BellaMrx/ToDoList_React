@@ -79,8 +79,6 @@ function App(props) {
   const headingText = `${taskList.length} ${tasksNoun} remaining`;
 
 
-
-
   const filterList = FILTER_NAMES.map((name) => (
     <FilterButton
       key={name}
