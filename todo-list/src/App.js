@@ -4,11 +4,22 @@ import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
 import { nanoid } from "nanoid";
 
+// define the filter with a JavaScript object
+const FILTER_MAP = {
+  All: () => true,
+  Active: (task) => !task.completed,
+  Completed: (task) => task.completed,
+};
+
+const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 
 function App(props) {
   // to add a task
   const [tasks, setTasks] = useState(props.tasks);
+    
+  // reads and sets the filter (filter buttons)
+  const [filter, setFilter] = useState("All");
 
   // for handling the form transmission for callbacks
   function addTask(name) {
@@ -36,11 +47,21 @@ function App(props) {
     setTasks(remainingTasks);
   }
   
-  
-  
+  // edit the name of a task
+  function editTask(id, newName) {
+    const editedTaskList = tasks.map((task) => {
+      // if this task has the same ID as the edited task
+      if (id === task.id) {
+        //
+        return { ...task, name: newName };
+      }
+      return task;
+    });
+    setTasks(editedTaskList);
+  }
 
   // returns a <Todo /> component from map()function
-  const taskList = tasks.map((task) => (
+  const taskList = tasks.filter(FILTER_MAP[filter]).map((task) => (
     <Todo
       id={task.id}
       name={task.name}
@@ -49,12 +70,25 @@ function App(props) {
       key={task.id}
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask={deleteTask}
+      editTask={editTask}
     />
   ));
 
   // single or multiple task / counts/displays the task
   const tasksNoun = taskList.length !== 1 ? "tasks" : "task";
   const headingText = `${taskList.length} ${tasksNoun} remaining`;
+
+
+
+
+  const filterList = FILTER_NAMES.map((name) => (
+    <FilterButton
+      key={name}
+      name={name}
+      isPressed={name === filter}
+      setFilter={setFilter}
+    />
+  ));
 
   return (
     <div className="todoapp stack-large">
@@ -63,9 +97,7 @@ function App(props) {
       <Form addTask={addTask} />
       {/* components/FilterButton.js - an array of buttons to filter the tasks */}
       <div className="filters btn-group stack-exception">
-        <FilterButton />
-        <FilterButton />
-        <FilterButton />
+        {filterList}
       </div>
       {/* number of tasks still to be completed */}
       <h2 id="list-heading">{headingText}</h2>
