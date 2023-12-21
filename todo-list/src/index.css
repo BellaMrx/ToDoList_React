@@ -1,19 +1,3 @@
-/* old kann weg ?????!!!!!!!!!! */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-/* old kann weg ?????!!!!!!!!!! */
-
 /* RESETS */
 *,
 *::before,
@@ -26,6 +10,16 @@ code {
 }
 html {
   font: 62.5% / 1.15 sans-serif;
+}
+body {
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  font:
+    1.6rem/1.25 Arial,
+    sans-serif;
+  background-image: linear-gradient(to bottom left, #94fa8b, #a0f9ff);
+  color: #4d4d4d;
 }
 h1,
 h2 {
@@ -69,16 +63,7 @@ input {
 input[type="text"] {
   border-radius: 0;
 }
-body {
-  width: 100%;
-  max-width: 68rem;
-  margin: 0 auto;
-  font:
-    1.6rem/1.25 Arial,
-    sans-serif;
-  background-color: #f5f5f5;
-  color: #4d4d4d;
-}
+
 @media screen and (min-width: 620px) {
   body {
     font-size: 1.9rem;
@@ -106,6 +91,7 @@ body {
   border-color: #4d4d4d;
 }
 .btn__danger {
+  font-weight: 900;
   color: #fff;
   background-color: #ca3c3c;
   border-color: #bd2130;
@@ -114,11 +100,11 @@ body {
   border-color: lightgrey;
 }
 .btn__primary {
-  color: #fff;
-  background-color: #000;
+  color: #444;
+  background-color: #5ce69f;
 }
 .btn-group {
-  display: flex;
+  display: inline-block;      /* block */
   justify-content: space-between;
 }
 .btn-group > * {
@@ -159,6 +145,7 @@ body {
     margin-top: 2.8rem;
   }
 }
+
 .stack-exception {
   margin-top: 1.2rem;
 }
@@ -240,13 +227,14 @@ body {
 }
 /* CHECKBOX STYLES */
 .c-cb {
+  width: 80%;             /* vorher nicht vorhanden */
   box-sizing: border-box;
   font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.25;
-  display: block;
+  display: inline-block;    /* block */
   position: relative;
   min-height: 44px;
   padding-left: 40px;

@@ -9,20 +9,16 @@ function usePrevious(value) {
   return ref.current;
 }
 
+
 function Todo(props) {
     // for the user interface for editing the task
     const [isEditing, setEditing] = useState(false);
-
     // for editing via the user interface
     const [newName, setNewName] = useState("");
-
     // focus indicator for edit input
     const editFieldRef = useRef(null);
     const editButtonRef = useRef(null);
-
-    
     const wasEditing = usePrevious(isEditing);
-
 
     function handleChange(e) {
         setNewName(e.target.value);
@@ -88,7 +84,7 @@ function Todo(props) {
               type="button"
               className="btn btn__danger"
               onClick={() => props.deleteTask(props.id)}>
-              Delete <span className="visually-hidden">{props.name}</span>
+              X <span className="visually-hidden">{props.name}</span>
             </button>
           </div>
         </div>
@@ -103,8 +99,6 @@ function Todo(props) {
           editButtonRef.current.focus();
         }
       }, [wasEditing, isEditing]);
-      
-      
 
       return <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>;
   }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 function Form(props) {
     // for user input and data updates
     const [name, setName] = useState("");
