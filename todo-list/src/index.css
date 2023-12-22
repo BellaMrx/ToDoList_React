@@ -9,14 +9,14 @@
   outline-offset: 0;
 }
 html {
-  font: 62.5% / 1.15 sans-serif;
+  font: 62.5% / 1.15 sans-serif;      /* orginal 62.5% - größe kompletter container außer tasks */
 }
 body {
   width: 100%;
   max-width: 68rem;
   margin: 0 auto;
-  font:
-    1.6rem/1.25 Arial,
+  font:                               /* orginal 1.6rem - schriftgröße */
+    1.6rem/1.25 Arial,              
     sans-serif;
   background-image: linear-gradient(to bottom left, #94fa8b, #a0f9ff);
   color: #4d4d4d;
@@ -52,7 +52,7 @@ optgroup,
 select,
 textarea {
   font-family: inherit;
-  font-size: 100%;
+  font-size: 100%;            /* orginal 100% - schriftgröße */
   line-height: 1.15;
   margin: 0;
 }
@@ -107,7 +107,7 @@ input[type="text"] {
   display: inline-block;      /* block */
   justify-content: space-between;
 }
-.btn-group > * {
+.btn-group > * {          /* !!! */
   flex: 1 1 49%;
 }
 .btn-group > * + * {
@@ -137,6 +137,7 @@ input[type="text"] {
 .stack-large > * + * {
   margin-top: 2.5rem;
 }
+
 @media screen and (min-width: 550px) {
   .stack-small > * + * {
     margin-top: 1.4rem;
@@ -159,6 +160,7 @@ input[type="text"] {
     0 2px 4px 0 rgb(0 0 0 / 20%),
     0 2.5rem 5rem 0 rgb(0 0 0 / 10%);
 }
+
 @media screen and (min-width: 550px) {
   .todoapp {
     padding: 4rem;
@@ -202,11 +204,13 @@ input[type="text"] {
 [class*="__lg"]:not(:last-child) {
   margin-bottom: 1rem;
 }
+
 @media screen and (min-width: 620px) {
   [class*="__lg"] {
     font-size: 2.4rem;
   }
 }
+
 /* Todo item styles */
 .todo {
   display: flex;
@@ -216,7 +220,7 @@ input[type="text"] {
 .todo > * {
   flex: 0 0 100%;
 }
-.todo-text {
+.todo-text {            /* !!! */
   width: 100%;
   min-height: 4.4rem;
   padding: 0.4rem 0.8rem;
@@ -227,26 +231,26 @@ input[type="text"] {
 }
 /* CHECKBOX STYLES */
 .c-cb {
-  width: 80%;             /* vorher nicht vorhanden */
+  width: 80%;             /* vorher nicht vorhanden !!! */
   box-sizing: border-box;
   font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.6rem;      /* schriftgröße task */
   line-height: 1.25;
   display: inline-block;    /* block */
   position: relative;
   min-height: 44px;
   padding-left: 40px;
-  clear: left;
+  clear: left;              /* ??? */
 }
 .c-cb > label::before,
 .c-cb > input[type="checkbox"] {
   box-sizing: border-box;
   top: -2px;
   left: -2px;
-  width: 44px;
-  height: 44px;
+  width: 2.75em;        /* 44px größe checkbox*/
+  height: 2.75em;       /* 44px größe checkbox*/
 }
 .c-cb > input[type="checkbox"] {
   -webkit-font-smoothing: antialiased;
@@ -276,14 +280,14 @@ input[type="text"] {
   border-width: 4px;
   outline: 3px dashed #228bec;
 }
-.c-cb > label::after {
+.c-cb > label::after {            /* check sign */
   box-sizing: content-box;
   content: "";
   position: absolute;
-  top: 11px;
-  left: 9px;
-  width: 18px;
-  height: 7px;
+  top: 11px;          /* check sign */ 
+  left: 9px;          /* check sign */
+  width: 18px;        /* check sign */
+  height: 7px;        /* check sign */
   transform: rotate(-45deg);
   border: solid;
   border-width: 0 0 5px 5px;
