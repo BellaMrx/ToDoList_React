@@ -82,7 +82,7 @@ function App(props) {
 
   // single or multiple task / counts/displays the task
   const tasksNoun = taskList.length !== 1 ? "tasks" : "task";
-  const headingText = `${taskList.length} ${tasksNoun} remaining`;
+  const headingText = `${taskList.length} ${tasksNoun} to go`;
 
   const filterList = FILTER_NAMES.map((name) => (
     <FilterButton
@@ -105,7 +105,7 @@ function App(props) {
   
   return (
     <div className="todoapp stack-large">
-      <h1>ToDo-List</h1>
+      <h1>To Do List</h1>
       {/* components/Form.js - <form> element to fill in a new task with <input type="text"> */}
       <Form addTask={addTask} />
       {/* components/FilterButton.js - an array of buttons to filter the tasks */}

@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* input focus ?:muss nicht oder besser */
+*:focus {
+    outline: 3px dashed #228bec;
+    outline-offset: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-family: Tahoma, sans-serif;
+    background-image: linear-gradient(to bottom left, #94fa8b, #a0f9ff);
+    color: #4d4d4d;
+}
+
+/* container */
+.todoapp {
+    margin: auto;
+    border: 1px solid azure;
+    border-radius: 4px;
+    padding: 0.8em;
+    text-align: center;
+    background-color: azure;
+    box-shadow: 0px 9px 15px -3px #000000b2;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+.label__lg {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* displays remaining tasks */
+#list-heading {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* input new task */
+input {
+    width: 100%;
+    margin: 0.3rem auto 0.3rem auto;
+    font-size: 1rem;
+}
+
+/* add button */
+.btn__primary {
+    width: 80%;
+    margin: 0.3rem auto 0.3rem auto;
+    display: block;
+    font-size: 0.9rem;
+    background-color: #5ce69f; /* Green */
+    border: 1px solid #dfeee0;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.2em 0.4em;
+    text-align: center;
+    text-decoration: none;
+}
+.btn__primary:hover {
+    background-color: #5ce69f;
+    border: 1px solid #5ce69f;
+}
+
+.filters button {
+    margin: 0.3rem;
+    display: inline;
+    font-size: 0.75rem;
+    background-color: #92c6c9; /* Green */
+    border: 1px solid #92c6c9;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.2em 0.4em;
+    text-align: center;
+    text-decoration: none; 
+}
+
+.filters button:hover {
+    background-color: #92c6c9;
+    border: 1px solid #dfeee0;
+}
+
+
+ul {
+    list-style: none;
+}
+
+.c-cb {
+    display: inline-block;    /* block */
+    position: relative;          /* ??? */
+}
+
+.btn-group {
+    float: right;
+}
+
