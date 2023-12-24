@@ -35,7 +35,7 @@ function Todo(props) {
         <form className="stack-small" onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="todo-label" htmlFor={props.id}>
-              New name for {props.name}
+              Edit {props.name}
             </label>
             <input 
                 id={props.id} 
@@ -72,10 +72,10 @@ function Todo(props) {
               {props.name}
             </label>
           </div>
-          <div className="btn-group">
+          <div className="btn-group btn-EditX">
             <button 
               type="button" 
-              className="btn" 
+              className="btn btn__edit" 
               onClick={() => setEditing(true)}
               ref={editButtonRef}>
                 Edit <span className="visually-hidden">{props.name}</span>
