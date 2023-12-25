@@ -2,27 +2,26 @@
  ToDo list build with React
 
 
+### install nanoid 
+[nanoid](https://github.com/ai/nanoid) - this is required so that each task returns a unique id.
 
-### install nanoid --> [nanoid](https://github.com/ai/nanoid)
-- this is required so that each task returns a unique id
+In the root directory (the folder in which your "react-project" is located):
+  ```
+   "$ cd react-project"
+  ```
 
-- in the root directory (the folder in which your "react-project" is located)
-   ```
-    "$ cd react-project"
-   ```
-
-- then 
-   ```
-    npm install nanoid
-   ```
+then: 
+  ```
+   npm install nanoid
+  ```
 
 if yarn:
-   ```
-    yarn add nanoid
-   ```
+  ```
+   yarn add nanoid
+  ```
 
-- import nanoid to app.js  
-   ```
-    import { nanoid } from "nanoid";
-   ```
+#### import nanoid to app.js  
+  ```
+   import { nanoid } from "nanoid";
+  ```
 
