@@ -3,7 +3,7 @@
 
 Source code in todo-list/src...
 
-Try out the calculator here [book-of-coding.com](https://book-of-coding.com/build_projects.html#todo-react)
+Try out the ToDo list here [book-of-coding.com](https://book-of-coding.com/build_projects.html#todo-react)
 
  <img src="images/Preview_Projects_React_ToDoList.png" width="500">
 
